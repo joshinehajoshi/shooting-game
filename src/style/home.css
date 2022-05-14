@@ -1,0 +1,14 @@
+.home-wrapper {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 2rem;
+    padding-left: 2rem ;
+    padding-right: 2rem;
+    background-color: rgb(31, 88, 69);
+}
+
+.btn:hover{
+    background-color: black;
+}
