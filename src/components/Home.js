@@ -8,7 +8,11 @@ function Home() {
 
     const [playerOneScore, setPlayerOneScore] = useState(100);
     const [playerTwoScore, setPlayerTwoScore] = useState(100);
+    const [winnerList, setWinnerList] = useState([]);
     const resetHandle = () => {
+        if (playerOneScore > playerTwoScore) {
+            setWinnerList([...winnerList, " Player1"]);
+        } else setWinnerList([...winnerList, " Player2"]);
         setPlayerOneScore(100);
         setPlayerTwoScore(100);
     }
@@ -17,6 +21,7 @@ function Home() {
   return (
     <div className='home-wrapper'>
         <Button onClick={resetHandle}>Start Game</Button>
+        <h3>Winners: {winnerList} </h3>
         <Row>
             <Col>
             <PlayerOne 
