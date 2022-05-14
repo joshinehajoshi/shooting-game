@@ -12,7 +12,9 @@ function Home() {
     const resetHandle = () => {
         if (playerOneScore > playerTwoScore) {
             setWinnerList([...winnerList, " Player1"]);
-        } else setWinnerList([...winnerList, " Player2"]);
+        } else if (playerOneScore < playerTwoScore) {
+            setWinnerList([...winnerList, " Player2"]);
+        }
         setPlayerOneScore(100);
         setPlayerTwoScore(100);
     }
