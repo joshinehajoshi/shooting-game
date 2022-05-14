@@ -5,7 +5,9 @@ function PlayerOne({playerTwoScore, setPlayerTwoScore, playerOneScore}) {
     const shootHandler = () => {
        let rand = Math.random() * 5;
        let randonInteger = Math.floor(rand);
-       setPlayerTwoScore(playerTwoScore - randonInteger)
+       if (playerTwoScore > 0) {
+       setPlayerTwoScore(playerTwoScore - randonInteger);
+       } else setPlayerTwoScore(0);
 
     }
   return (
