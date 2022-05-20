@@ -1,7 +1,12 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-function PlayerOne({playerTwoScore, setPlayerTwoScore, playerOneScore}) {
+function PlayerOne({
+  playerTwoScore, 
+  setPlayerTwoScore, 
+  playerOneScore,
+  playerOneBtn
+}) {
     const shootHandler = () => {
        let rand = Math.random() * 5;
        let randonInteger = Math.floor(rand);
@@ -14,7 +19,10 @@ function PlayerOne({playerTwoScore, setPlayerTwoScore, playerOneScore}) {
     <div>
         <h2>Player 1</h2>
         <h3>Score: {playerOneScore}</h3>
-        <Button onClick={shootHandler}>Shoot</Button>
+        <Button 
+        onClick={shootHandler}
+        disabled={playerOneBtn}
+        >Shoot</Button>
     </div>
   )
 }
